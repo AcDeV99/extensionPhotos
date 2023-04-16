@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "photos",
+  "description": "이미지를 선택하면 웹페이지의 배경이 해당 이미지로 변합니다.",
+  "version": "1.0",
+  "icons": {
+    "16": "/images/16.png",
+    "32": "/images/32.png",
+    "48": "/images/48.png",
+    "128": "/images/128.png"
+  },
+  "action": {
+    "default_icon": "/images/128.png",
+    "default_title": "photos",
+    "default_popup": "/popup/popup.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/scripts/inject.js"]
+    }
+  ]
+}
